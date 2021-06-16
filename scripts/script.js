@@ -36,8 +36,6 @@ saveButton.addEventListener('click', (event) => {
         profileName.textContent = name;
         profileProfession.textContent = profession;
         modalControl('close');
-    } else {
-        alert('Invalid Input of edit-form container');
     }
 });
 
