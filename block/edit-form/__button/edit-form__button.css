@@ -1,0 +1,11 @@
+.edit-form__button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.edit-form__button:focus {
+    outline: none;
+}

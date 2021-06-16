@@ -1,0 +1,17 @@
+.edit-form__input {
+    margin: 0 auto;
+    padding-bottom: 13px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #000000;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    max-width: 358px;
+    width: 100%;
+}
+
+.edit-form__input:focus {
+    outline: none;
+}
