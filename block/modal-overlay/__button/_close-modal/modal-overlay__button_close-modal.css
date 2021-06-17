@@ -5,11 +5,22 @@
     width: 58px;
     height: 58px;
     margin: 0 0 0 auto;
-    background-image: url('./images/CloseIcon.svg');
+    background-image: url('../../../../images/CloseIcon.svg');
     background-size: 58px 58px;
     cursor: pointer;
 }
 
 .modal-overlay__button_close-modal:hover {
     opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) { 
+    .modal-overlay__button_close-modal {
+        right: 0;
+        top: 0;
+        width: 38px;
+        margin-bottom: 13px;
+        height: 38px;
+        background-size: 38px 38px;
+    }
 }
