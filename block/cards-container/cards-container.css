@@ -1,5 +1,5 @@
 .cards-container {
-    margin: 47.25px auto 66px auto;
+    margin: 47.25px auto 67px auto;
     display: grid;
     grid-template-columns: repeat(3, 282px);
     grid-template-rows: repeat(1, 361px);
@@ -19,6 +19,7 @@
 @media screen and (max-width: 767px) {
 
     .cards-container {
+        margin-bottom: 48px;
         grid-template-columns: repeat(1, 282px);
         gap: 20px;
         max-width: 282px;

@@ -27,6 +27,7 @@
 @import url('../block/card-item/__union/card-item__union.css');
 
 @import url('../block/footer/footer.css');
+@import url('../block/footer/__text-container/footer__text-container.css');
 
 @import url('../block/modal-overlay/modal-overlay.css');
 @import url('../block/modal-overlay/_open/modal-overlay_open.css');

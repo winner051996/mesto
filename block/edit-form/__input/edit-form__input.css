@@ -4,7 +4,7 @@
     border-left: none;
     border-top: none;
     border-right: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
@@ -14,4 +14,10 @@
 
 .edit-form__input:focus {
     outline: none;
+}
+
+@media screen and (max-width: 767px) {
+    .edit-form__input {
+        max-width: 238px;
+    }
 }
