@@ -33,7 +33,7 @@
 @import url('../block/modal-overlay/_open/modal-overlay_open.css');
 @import url('../block/modal-overlay/__content/modal-overlay__content.css');
 @import url('../block/modal-overlay/__button/modal-overlay__button.css');
-@import url('../block/modal-overlay/__button/_close-modal/modal-overlay__button_close-modal.css ');
+@import url('../block/modal-overlay/__button/_close-modal/modal-overlay__button_close-modal.css');
 
 @import url('../block/edit-form/edit-form.css');
 @import url('../block/edit-form/__input/edit-form__input.css');
