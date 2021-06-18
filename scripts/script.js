@@ -1,9 +1,9 @@
 let modalOverlay = document.querySelector('.modal-overlay');
-let modalOverlayNameInput = modalOverlay.querySelector('.edit-form__input_name');
-let modalOverlayProfessionInput = modalOverlay.querySelector('.edit-form__input_profession');
-let closeButton = modalOverlay.querySelector('.modal-overlay__button_close-modal');
-let editProfileButton = document.querySelector('.profile__button_edit');
-let saveButton = modalOverlay.querySelector('.edit-form__button_save');
+let modalOverlayNameInput = modalOverlay.querySelector('.edit-form__input_type_name');
+let modalOverlayProfessionInput = modalOverlay.querySelector('.edit-form__input_type_profession');
+let closeButton = modalOverlay.querySelector('.modal-overlay__button_type_close-modal ');
+let editProfileButton = document.querySelector('.profile__button_type_edit');
+let saveButton = modalOverlay.querySelector('.edit-form__button_type_save');
 let profileName = document.querySelector('.profile__name');
 let profileProfession = document.querySelector('.profile__profession');
 

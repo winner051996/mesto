@@ -1,4 +1,4 @@
-.profile__button_edit {
+.profile__button_type_edit {
     margin: auto 0 auto 0;
     width: 24px;
     height: 24px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 767px) { 
-    .profile__button_edit {
+    .profile__button_type_edit {
         width: 18px;
         height: 18px;
         background-size: 7.5px 7.5px;
