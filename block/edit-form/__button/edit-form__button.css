@@ -1,15 +1,33 @@
-.edit-form__button {
+/* .edit-form__button {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     font-size: 18px;
     line-height: 22px;
     cursor: pointer;
+    background-color: black;
+} */
+
+.edit-form__button {
+    margin: 48px auto 37px;
+    border-radius: 2px;
+    color: white;
+    background-color: black;
+    width: 358px;
+    height: 50px;
+    border: none;
+    font-size: 18px;
+    line-height: 22px;
 }
+
 
 .edit-form__button:focus {
     outline: none;
 }
 
+.edit-form__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 767px) {
     .edit-form__button  {

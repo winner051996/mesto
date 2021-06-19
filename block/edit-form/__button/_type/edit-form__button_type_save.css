@@ -1,12 +1,3 @@
-.edit-form__button_type_save {
-    margin: 48px 36px 37px 36px;
-    border-radius: 2px;
-    color: white;
-    background-color: black;
-    max-width: 358px;
-    height: 50px;
-}
-
 .edit-form__button_type_save:hover {
     opacity: 0.8;
 }
