@@ -23,7 +23,7 @@ const validateInput = (inputElement, errorField, selectors) => {
 
 const toggleButton = (listOfInputs, button) => {
     if (listOfInputs.some((inputElement) => {
-        return inputElement.validity.valid !== true; 
+        return inputElement.validity.valid !== true;
     })) {
         button.classList.add(selectors.inactiveButtonClass);
     } else {
@@ -36,7 +36,7 @@ const validateInputEvent = (inputElement, errorField, formInputs, formButton, se
     toggleButton(formInputs, formButton, selectors.inactiveButtonClass);
 };
 
-const enableValidation = ( selectors ) => {
+const enableValidation = (selectors) => {
     const forms = Array.from(document.querySelectorAll(selectors.formSelector));
     forms.forEach((formElement) => {
         const formInputs = Array.from(formElement.querySelectorAll(selectors.inputSelector));
@@ -49,4 +49,4 @@ const enableValidation = ( selectors ) => {
     });
 };
 
-enableValidation(selectors); 
+enableValidation(selectors);
