@@ -1,12 +1,10 @@
-const modalOverlay = document.querySelector('.modal-overlay');
-const modalOverlayNameInput = modalOverlay.querySelector('.edit-form__input_type_name');
-const modalOverlayProfessionInput = modalOverlay.querySelector('.edit-form__input_type_profession');
-const closeButton = modalOverlay.querySelector('.modal-overlay__button_type_close-modal ');
+const editProfileOverlay = document.querySelector("#modal-edit-profile");
+const modalOverlayNameInput = editProfileOverlay.querySelector('.edit-form__input_type_name');
+const modalOverlayProfessionInput = editProfileOverlay.querySelector('.edit-form__input_type_profession');
+const saveButton = editProfileOverlay.querySelector('.edit-form__button_type_save');
 const editProfileButton = document.querySelector('.profile__button_type_edit');
-const saveButton = modalOverlay.querySelector('.edit-form__button_type_save');
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
-
 
 const cardsContainer = document.querySelector(".cards-container");
 const addCardButton = document.querySelector(".profile__button_type_add");
@@ -15,7 +13,6 @@ const addCardNameInput = addCardOverlay.querySelector(".edit-form__input_type_na
 const addCardSourceInput = addCardOverlay.querySelector(".edit-form__input_type_img");
 const closeAddNewCardButton = addCardOverlay.querySelector(".modal-overlay__button_type_close-modal");
 const addNewCardForm = addCardOverlay.querySelector(".edit-form");
-const editProfileOverlay = document.querySelector("#modal-edit-profile");
 const closeEditProfileButton = editProfileOverlay.querySelector(".modal-overlay__button_type_close-modal");
 const saveProfileSettingForm = editProfileOverlay.querySelector(".edit-form");
 const photoViewierOverlay = document.querySelector("#modal-photo-viewier");
@@ -104,7 +101,6 @@ const saveChanges = (event) => {
 };
 
 const addNewCardFromModal = (event) => {
-    console.log(event);
     event.preventDefault();
     addNewCard(addCardNameInput.value, addCardSourceInput.value);
     addNewCardForm.reset();
