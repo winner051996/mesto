@@ -10,10 +10,7 @@
     font-weight: 400;
     max-width: 358px;
     width: 100%;
-}
-
-.edit-form__input:last-of-type {
-    margin-bottom: 0;
+    height: 24px;
 }
 
 .edit-form__input:focus {

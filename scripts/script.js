@@ -13,6 +13,7 @@ const addCardNameInput = addCardOverlay.querySelector(".edit-form__input_type_na
 const addCardSourceInput = addCardOverlay.querySelector(".edit-form__input_type_img");
 const closeAddNewCardButton = addCardOverlay.querySelector(".modal-overlay__button_type_close-modal");
 const addNewCardForm = addCardOverlay.querySelector(".edit-form");
+const addNewCardSaveButton = addCardOverlay.querySelector(".edit-form__button_type_add-card");
 const closeEditProfileButton = editProfileOverlay.querySelector(".modal-overlay__button_type_close-modal");
 const saveProfileSettingForm = editProfileOverlay.querySelector(".edit-form");
 const photoViewierOverlay = document.querySelector("#modal-photo-viewier");
@@ -72,12 +73,47 @@ const addNewCard = (name, link) => {
     cardsContainer.prepend(createCard(name, link));
 };
 
+const clickHandler = (modal) => {
+  modal.addEventListener("click", closeModalHandler, false);
+};
+
+
 const openModal = (modal) => {
     modal.classList.add("modal-overlay_open");
+    clickHandler(modal);
+    escapeHandlerOverlay();
 };
-const closeModal = (modal) => {
-    modal.classList.remove("modal-overlay_open");
+
+
+const closeModal = () => {
+  const modal = document.querySelector(".modal-overlay_open");
+  if (modal) {
+      modal.classList.remove("modal-overlay_open");
+      modal.removeEventListener("click", closeModalHandler, false);
+      removeEscapeHandler();
+  }   
 };
+
+const closeModalHandler = (event) => {
+  if (event.target.classList.contains("modal-overlay_open")) {
+      closeModal();
+  }
+};
+
+const escCloseModalHandler = (event) => {
+  if (event.key === "Escape") {
+      closeModal();
+  }
+};
+
+const escapeHandlerOverlay = () => {
+  document.addEventListener("keydown", escCloseModalHandler);
+};
+
+const removeEscapeHandler = () => {
+  document.removeEventListener("keydown", escCloseModalHandler);
+};
+
 
 const openPhotoViewierModal = (name, link) => {
     photoViewierImage.setAttribute("src", link);
@@ -97,14 +133,15 @@ const saveChanges = (event) => {
     event.preventDefault();
     profileName.textContent = modalOverlayNameInput.value;
     profileProfession.textContent = modalOverlayProfessionInput.value;
-    closeModal(editProfileOverlay);
+    closeModal();
 };
 
 const addNewCardFromModal = (event) => {
     event.preventDefault();
     addNewCard(addCardNameInput.value, addCardSourceInput.value);
     addNewCardForm.reset();
-    closeModal(addCardOverlay);
+    addNewCardSaveButton.classList.add("edit-form__button_disabled");
+    closeModal();
 };
 
 editProfileButton.addEventListener("click", openEditProfileModal);
