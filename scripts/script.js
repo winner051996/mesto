@@ -85,33 +85,34 @@ const openModal = (modal) => {
 };
 
 
-const closeModal = () => {
-  const modal = document.querySelector(".modal-overlay_open");
-  if (modal) {
+const closeModal = (modal) => {
     modal.classList.remove("modal-overlay_open");
     modal.removeEventListener("click", closeModalHandler, false);
     removeEscapeHandler();
-  }
+    addNewCardForm.reset();
 };
 
 const closeModalHandler = (event) => {
   if (event.target.classList.contains("modal-overlay_open")) {
-    closeModal();
+    const modal = document.querySelector(".modal-overlay_open");
+    
+    closeModal(modal);
   }
 };
 
-const escCloseModalHandler = (event) => {
+const addEscHandler = (event) => {
   if (event.key === "Escape") {
-    closeModal();
+    const modal = document.querySelector(".modal-overlay_open");
+    closeModal(modal);
   }
 };
 
 const escapeHandlerOverlay = () => {
-  document.addEventListener("keydown", escCloseModalHandler);
+  document.addEventListener("keydown", addEscHandler);
 };
 
 const removeEscapeHandler = () => {
-  document.removeEventListener("keydown", escCloseModalHandler);
+  document.removeEventListener("keydown", addEscHandler);
 };
 
 
@@ -129,19 +130,23 @@ const openEditProfileModal = () => {
 };
 
 
-const saveChanges = (event) => {
+const submitEditProfileForm = (event) => {
   event.preventDefault();
   profileName.textContent = modalOverlayNameInput.value;
   profileProfession.textContent = modalOverlayProfessionInput.value;
-  closeModal();
+  closeModal(editProfileOverlay);
 };
+
+const disableButton = (button) => {
+  button.classList.add("edit-form__button_disabled");
+}
 
 const addNewCardFromModal = (event) => {
   event.preventDefault();
   addNewCard(addCardNameInput.value, addCardSourceInput.value);
   addNewCardForm.reset();
-  addNewCardSaveButton.classList.add("edit-form__button_disabled");
-  closeModal();
+  disableButton(addNewCardSaveButton);
+  closeModal(addCardOverlay);
 };
 
 editProfileButton.addEventListener("click", openEditProfileModal);
@@ -150,7 +155,7 @@ closeEditProfileButton.addEventListener("click", () => closeModal(editProfileOve
 closeAddNewCardButton.addEventListener("click", () => closeModal(addCardOverlay));
 closePhotoViewierButton.addEventListener("click", () => closeModal(photoViewierOverlay));
 
-saveProfileSettingForm.addEventListener("submit", saveChanges);
+saveProfileSettingForm.addEventListener("submit", submitEditProfileForm);
 addNewCardForm.addEventListener("submit", addNewCardFromModal);
 
 initialCards.forEach((cardData) => {
