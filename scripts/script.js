@@ -89,7 +89,6 @@ const closeModal = (modal) => {
     modal.classList.remove("modal-overlay_open");
     modal.removeEventListener("click", closeModalHandler, false);
     removeEscapeHandler();
-    addNewCardForm.reset();
 };
 
 const closeModalHandler = (event) => {
@@ -124,11 +123,28 @@ const openPhotoViewierModal = (name, link) => {
 };
 
 const openEditProfileModal = () => {
+  resetFormErrors(saveProfileSettingForm);
   openModal(editProfileOverlay);
   modalOverlayNameInput.value = profileName.textContent ?? "";
   modalOverlayProfessionInput.value = profileProfession.textContent ?? "";
+  saveButton.removeAttribute('disabled');
 };
 
+const openAddCardModal = () => {
+  addNewCardSaveButton.setAttribute('disabled', true);
+  resetFormErrors(addNewCardForm);
+  openModal(addCardOverlay);
+}
+
+const resetFormErrors = (formElement) => {
+  formElement.reset();
+  Array.from(formElement.querySelectorAll('.edit-form__input')).forEach((input) => {
+    input.classList.remove('edit-form__input_error');
+  })
+  Array.from(formElement.querySelectorAll('.edit-form__error')).forEach((erorr) => {
+    erorr.textContent = '';
+  })
+}
 
 const submitEditProfileForm = (event) => {
   event.preventDefault();
@@ -137,20 +153,20 @@ const submitEditProfileForm = (event) => {
   closeModal(editProfileOverlay);
 };
 
-const disableButton = (button) => {
-  button.classList.add("edit-form__button_disabled");
-}
+// const disableButton = (button) => {
+//   button.classList.add("edit-form__button_disabled");
+// }
 
 const addNewCardFromModal = (event) => {
   event.preventDefault();
   addNewCard(addCardNameInput.value, addCardSourceInput.value);
-  addNewCardForm.reset();
-  disableButton(addNewCardSaveButton);
+  // addNewCardForm.reset();
+  // disableButton(addNewCardSaveButton);
   closeModal(addCardOverlay);
 };
 
 editProfileButton.addEventListener("click", openEditProfileModal);
-addCardButton.addEventListener("click", () => openModal(addCardOverlay));
+addCardButton.addEventListener("click", openAddCardModal);
 closeEditProfileButton.addEventListener("click", () => closeModal(editProfileOverlay));
 closeAddNewCardButton.addEventListener("click", () => closeModal(addCardOverlay));
 closePhotoViewierButton.addEventListener("click", () => closeModal(photoViewierOverlay));

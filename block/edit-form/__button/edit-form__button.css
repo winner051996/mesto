@@ -20,6 +20,14 @@
     cursor: pointer;
 }
 
+.edit-form__button:disabled {
+    border: 1px solid black;
+    background: white;
+    color: black;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 @media screen and (max-width: 767px) {
     .edit-form__button  {
         font-size: 14px;

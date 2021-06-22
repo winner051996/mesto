@@ -26,8 +26,10 @@ const toggleButton = (listOfInputs, button) => {
         return inputElement.validity.valid !== true;
     })) {
         button.classList.add(selectors.inactiveButtonClass);
+        button.setAttribute('disabled', true);
     } else {
         button.classList.remove(selectors.inactiveButtonClass);
+        button.removeAttribute('disabled');
     }
 };
 
