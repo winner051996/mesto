@@ -153,15 +153,9 @@ const submitEditProfileForm = (event) => {
   closeModal(editProfileOverlay);
 };
 
-// const disableButton = (button) => {
-//   button.classList.add("edit-form__button_disabled");
-// }
-
 const addNewCardFromModal = (event) => {
   event.preventDefault();
   addNewCard(addCardNameInput.value, addCardSourceInput.value);
-  // addNewCardForm.reset();
-  // disableButton(addNewCardSaveButton);
   closeModal(addCardOverlay);
 };
 
