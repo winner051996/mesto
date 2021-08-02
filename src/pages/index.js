@@ -64,7 +64,6 @@ const initModalControls = () => {
 
     editProfileButton.addEventListener("click", () => {
         editProfileValidator.resetForm();
-        console.log(userInfo.getUserInfo());
         setEditProfileForm(userInfo.getUserInfo());
         editProfileModal.openModal();
     });
