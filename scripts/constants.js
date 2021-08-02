@@ -37,5 +37,6 @@ export const selectors = {
 
 export const cardItemSelector = "#card-item-template";
 export const inputErrorVisibleClass = "edit-form__input_error";
+export const cardsContainerSelector = ".cards-container";
 
 export const cardsContainer = document.querySelector(".cards-container");
