@@ -13,6 +13,16 @@ export default class Section {
         this.element = undefined;
     }
 
+    _clearContainer() {
+        this._container.textContent = "";
+    }
+
+    setItems(items) {
+        this._items = items;
+        this._clearContainer();
+        this.renderItems();
+    }
+
     addItem(item) {
         this._element = this._renderer(item);
         this._container.prepend(this._element);
