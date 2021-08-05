@@ -35,6 +35,16 @@ export const selectors = {
     errorClass: "edit-form__error_visible",
 };
 
+const tokenId = "c37b82be-3ef7-43ce-9a05-197a418b150c";
+
+export const apiOptions = {
+    baseUrl: "https://nomoreparties.co/v1/cohort-26",
+    headers: {
+        authorization: tokenId,
+        "Content-Type": "application/json"
+    }
+};
+
 export const cardItemSelector = "#card-item-template";
 export const inputErrorVisibleClass = "edit-form__input_error";
 export const cardsContainerSelector = ".cards-container";
